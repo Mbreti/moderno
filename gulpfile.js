@@ -11,7 +11,7 @@ sass.compiler = require('node-sass');
 
 gulp.task("sass", function () {
     return gulp.src("app/scss/**/*.scss")
-        .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
+        .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(rename({ suffix: ".min" }))
         .pipe(autoprefixer({
             overrideBrowserslist: ["last 2 versions"]
